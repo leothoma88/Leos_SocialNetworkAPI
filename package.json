@@ -47,6 +47,7 @@
     "mime": "^1.6.0",
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
+    "moment": "^2.29.4",
     "mongo": "^0.1.0",
     "mongodb": "^4.11.0",
     "mongodb-connection-string-url": "^2.5.4",
