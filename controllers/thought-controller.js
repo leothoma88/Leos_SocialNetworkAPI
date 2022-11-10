@@ -3,8 +3,8 @@ const { Thought, User } = require("../models");
 
 
 const thoughtController = {
-    //This GET all thoughts
-  getThoughts(req, res) {
+//This GET all thoughts
+getThoughts(req, res) {
     Thought.find({})
       .then((dbThoughtData) => res.json(dbThoughtData))
       .catch((err) => {
@@ -13,8 +13,8 @@ const thoughtController = {
       });
   },
 
-  // GET Thought by ID
-  getSingleThought(req, res) {
+// GET Thought by ID
+getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.id })
       .then((dbThoughtData) => {
         !dbThoughtData
@@ -29,8 +29,8 @@ const thoughtController = {
       });
   },
 
-  // POST  Thought
-  createThought(req, res) {
+// POST  Thought
+createThought(req, res) {
     Thought.create(req.body)
       .then((dbThoughtData) => {
         return User.findOneAndUpdate(
@@ -53,8 +53,8 @@ const thoughtController = {
         res.status(500).json(err);
       });
   },
-  // UPDATE a Thought
-  updateThought({ params, body }, res) {
+// UPDATE a Thought
+updateThought({ params, body }, res) {
     Thought.findOneAndUpdate({ _id: params.id }, body, {
       new: true,
       runValidators: true,
@@ -68,8 +68,8 @@ const thoughtController = {
       })
       .catch((err) => res.json(err));
   },
- // DELETE a Thought
- deleteThought(req, res) {
+// DELETE a Thought
+deleteThought(req, res) {
     Thought.findOneAndDelete({ _id: req.params.id })
       .then((dbThoughtData) => {
         !dbThoughtData
@@ -85,8 +85,8 @@ const thoughtController = {
         res.status(500).json(err);
       });
   },
-   // POST a reaction
-   addReaction({ params, body }, res) {
+// POST a reaction
+addReaction({ params, body }, res) {
     Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       { $push: { reactions: body } },
@@ -103,8 +103,8 @@ const thoughtController = {
       })
       .catch((err) => res.json(err));
   },
-  // DELETE a reaction
-  deleteReaction(req, res) {
+// DELETE a reaction
+deleteReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
       { $pull: { reactions: { reactionId: req.params.reactionId } } }
