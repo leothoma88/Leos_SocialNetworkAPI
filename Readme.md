@@ -18,7 +18,7 @@ The following image demonstrates the web application's appearance and functional
 
 ## Links
 
-https://leothoma88.github.io/LeosTeamProfileGenerator/ (Link to live Github Site)
+https://leothoma88.github.io/Leos_SocialNetworkAPI/ (Link to live Github Site)
 
 https://github.com/leothoma88/Leos_SocialNetworkAPI (Link to Github Repository)
 
@@ -26,7 +26,7 @@ https://github.com/leothoma88/Leos_SocialNetworkAPI (Link to Github Repository)
 
 VIDEO LINK:
 
-https://drive.google.com/file/d/1XmyghGPf7ywQQl3InRJiKRdzs38SW8Tf/view?usp=sharing
+https://drive.google.com/file/d/1Kormn0HDDSj-2ZPdlE1Hb76lNUNpYj1K/view?usp=sharing
 
 
 

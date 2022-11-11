@@ -16,7 +16,7 @@ getUsers(req, res) {
 
 // GET User by ID
 userById(req, res) {
-    User.findOne({ id: req.params.id })
+    User.findOne({ id: req.params.userId })
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => {
         console.log("Error: ", err);
