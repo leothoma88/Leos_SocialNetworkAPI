@@ -4,9 +4,9 @@ This project is an API for a social network that utilizes a NoSQL database enten
 
 There are GET routes for all users and all thoughts.
 There are GET routes for a single user and a single thought.
-POST, PUT, and DELETE routes for users and thoughts
-POST and DELETE routes for a user’s friend list
-POST and DELETE routes for reactions to thoughts
+POST, PUT, and DELETE routes for users and thoughts.
+POST and DELETE routes for a user’s friend list.
+POST and DELETE routes for reactions to thoughts.
 
 ## Screenshot
 
