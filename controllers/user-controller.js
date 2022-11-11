@@ -16,7 +16,7 @@ getUsers(req, res) {
 
 // GET User by ID
 userById(req, res) {
-    User.findOne({ _id: req.params.id })
+    User.findOne({ id: req.params.id })
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => {
         console.log("Error: ", err);
@@ -35,7 +35,7 @@ createUser(req, res) {
   },
 // UPDATE a User
 updateUser(req, res) {
-    User.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+    User.findOneAndUpdate({ id: req.params.id }, req.body, { new: true })
       .then((dbUserData) => {
         if (!dbUserData) {
           res.status(404).json({
@@ -56,7 +56,7 @@ updateUser(req, res) {
 
 //Delete a user & thoughts
 deleteUser(req, res) {
-    User.findOneAndDelete({ _id: req.params.userId })
+    User.findOneAndDelete({ id: req.params.userId })
       .then((dbUserData) => {
         if (!dbUserData) {
           return res.status(404).json({ message: "There is no user associated with this id" });
@@ -76,7 +76,7 @@ deleteUser(req, res) {
 // ADD  friend
 addFriend(req, res) {
     User.findByIdAndUpdate(
-      req.params.id,
+      {_id:req.params.userId},
       { $push: { friends: req.params.friendId } },
       { new: true }
     )

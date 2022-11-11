@@ -15,7 +15,7 @@ getThoughts(req, res) {
 
 // GET Thought by ID
 getSingleThought(req, res) {
-    Thought.findOne({ _id: req.params.id })
+    Thought.findOne({ _id: req.params.thoughtId })
       .then((dbThoughtData) => {
         !dbThoughtData
           ? res.status(404).json({
@@ -55,7 +55,7 @@ createThought(req, res) {
   },
 // UPDATE a Thought
 updateThought({ params, body }, res) {
-    Thought.findOneAndUpdate({ _id: params.id }, body, {
+    Thought.findOneAndUpdate({ _id: params.thoughtId }, body, {
       new: true,
       runValidators: true,
     })
@@ -70,7 +70,7 @@ updateThought({ params, body }, res) {
   },
 // DELETE a Thought
 deleteThought(req, res) {
-    Thought.findOneAndDelete({ _id: req.params.id })
+    Thought.findOneAndDelete({ _id: req.params.thoughtId })
       .then((dbThoughtData) => {
         !dbThoughtData
           ? res.status(404).json({
